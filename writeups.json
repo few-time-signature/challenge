@@ -52,11 +52,11 @@
     "id": "grs-cc-756-lean",
     "team": "organizer",
     "bound_bytes": 756,
-    "head": "cdfe20bba0e0142736bf78b823d62d0ebed87b0e",
+    "head": "4790c9c465857159aa8e6bda1ebd069341096a74",
     "reference": "grs-cc-v1",
     "title": "GRS-CC at 756 bytes",
     "summary": "An accepted signature discloses at most 47 labels of 16 bytes and one four-byte counter. The seven layers contribute six labels each. Five more labels authenticate the outer choice. The registered graph and encoder use fewer than 11,676,797 expected signing hashes and at most 441 verification hashes on success.",
     "pr": 8,
-    "run": 45450347082
+    "run": 45456970669
   }
 ]
