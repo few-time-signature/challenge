@@ -12,6 +12,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+from judge.score import OPENING
+
 
 ROOT = Path(__file__).resolve().parents[1]
 loader = importlib.machinery.SourceFileLoader("fts_client", str(ROOT / "fts"))
@@ -89,6 +91,7 @@ class EntrantCliTests(unittest.TestCase):
     def test_both_templates_and_local_validation(self):
         for track in client.TRACKS:
             entry = self.example(track)
+            self.assertEqual(json.loads((entry / "claim.json").read_text())["bound_bytes"], OPENING[track])
             self.assertIn("Entry format OK", self.cli("check", str(entry)).stdout)
             self.cli("init", track, "my-claim", "--team", "test-team", success=False)
             (entry / "notes.txt").symlink_to(entry / "claim.json")

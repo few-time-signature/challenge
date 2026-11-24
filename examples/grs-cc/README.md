@@ -1,6 +1,6 @@
 # GRS-CC · 756-byte construction
 
-This directory contains the compact [program manifest](program.json) for the organizer's fixed [Lean scheme](../../formal/PoissonDAG/Constructions/GRSCC/Circuit.lean). The public judge verified its unconditional certificate. [Submission and write-up](https://github.com/few-time-signature/challenge/pull/8)
+This directory contains the compact [program manifest](program.json) for the organizer's fixed [Lean scheme](../../formal/PoissonDAG/Constructions/GRSCC/Circuit.lean). Its 756-byte signature sets the construction track’s opening bound. [Complete starter and proof](../entries/construction/grs-cc-756-lean/) · [Verified submission](https://github.com/few-time-signature/challenge/pull/8)
 
 ## What is transmitted?
 
@@ -10,7 +10,7 @@ The addressed graph has 2,629,119 vertices. Each counter trial uses two hash cal
 
 ## Why the covering bound holds
 
-The shared-Poisson reduction needs twenty local supplier-count inequalities. The submitted proof computes all twenty from 63 integer evaluations, extracts the required coefficients, and applies the organizer’s Poisson theorem. The final Lean goal binds this calculation, authentication, correctness, hash costs and size to the registered graph and encoder. [Verified proof and author write-up](https://github.com/few-time-signature/challenge/pull/8) · [Kernel replay](https://github.com/few-time-signature/challenge/actions/runs/45450347082)
+The shared-Poisson reduction needs twenty local supplier-count inequalities. The submitted proof computes all twenty from 63 integer evaluations, extracts the required coefficients, and applies the organizer’s Poisson theorem. The final Lean goal binds this calculation, authentication, correctness, hash costs and size to the registered graph and encoder. [Verified proof and author write-up](https://github.com/few-time-signature/challenge/pull/8) · [Kernel replay](https://github.com/few-time-signature/challenge/actions/runs/45456970669)
 
 To build the public components locally with the pinned Lean toolchain:
 

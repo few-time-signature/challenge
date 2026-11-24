@@ -5,7 +5,7 @@
 | Track | What Lean must prove | Better score | Opening bound |
 | --- | --- | --- | --- |
 | Lower bound | Every eligible scheme uses at least the claimed bytes | Larger | [99 B](formal/PoissonDAG/V2/Lower99.lean) |
-| Construction | The explicit submitted scheme is eligible and uses at most the claimed bytes | Smaller | [2,020 B FORS+C](examples/entries/construction/fors-c-2020/) |
+| Construction | The explicit submitted scheme is eligible and uses at most the claimed bytes | Smaller | [756 B GRS-CC](examples/entries/construction/grs-cc-756-lean/proof/Main.lean) |
 
 Both tracks use the **authenticated-disclosure model**. Every disclosed label must contribute to the root recomputed during verification. The model measures maximum serialized signature bytes, expected signing and verification hashes, honest failure, and the chance that disclosures from one shared Poisson(1) history cover a fresh independent raw target. The covering target is a symbolic probability of at most 2⁻¹²⁸. Full adaptive ROM unforgeability would require another theorem. The independent input bits feed an explicit acyclic Boolean circuit. The Lean examples use the namespace `PoissonDAG.V2` for this model. [Formal contract](formal/PoissonDAG/V2/Model.lean) · [Base definitions](formal/PoissonDAG/Model.lean)
 
@@ -25,7 +25,7 @@ git clone https://github.com/few-time-signature/challenge.git
 cd challenge
 ```
 
-Choose a fresh ID and your team name. This example starts a construction from the credited 2,020 B FORS+C entry. For a lower bound, replace `construction` with `lower-bound` in both paths and commands. Its starter is the credited 99 B proof.
+Choose a fresh ID and your team name. The construction starter copies the complete 756 B GRS-CC opening entry, including its Lean proof and attribution. For a lower bound, replace `construction` with `lower-bound` in both paths and commands. Its starter is the credited 99 B proof.
 
 ```sh
 ./fts init construction my-design --team my-team
@@ -84,7 +84,7 @@ theorem Submission.certificate : PoissonDAG.V2.UniversalLowerBound 99 :=
 
 ## Submit a construction
 
-Supply an executable construction and a complete Lean proof for the same scheme. **Smaller maximum serialized signatures win.** The construction track starts at 2,020 B. A new record must be strictly smaller. The 756 B GRS-CC candidate still needs a complete covering proof.
+Supply an executable construction and a complete Lean proof for the same scheme. **Smaller maximum serialized signatures win.** The opening record is **756 B**, set by GRS-CC. Once scoring opens, a verified 755 B construction would improve the opening by one byte. A 756 B replay ties the opening and earns no place. [Opening entry](examples/entries/construction/grs-cc-756-lean/) · [Lean judge receipt](https://github.com/few-time-signature/challenge/actions/runs/45456970669)
 
 1. Place the four common files and `program.json` in `submissions/construction/<id>/`. Set the track to `construction` and `bound_bytes` to your claimed upper bound, in whole bytes.
 2. Bind the implementation to the claim using **one** of the two program formats below. For an original design, submit the actual DAG and Boolean encoder. The fixed organizer implementations listed below can be selected by name.

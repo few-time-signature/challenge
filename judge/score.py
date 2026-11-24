@@ -1,7 +1,7 @@
 """Rank verified snapshots in the order GitHub received them."""
 # Read from the protected base revision at intake, including on a rerun.
 SCORING_OPEN = False
-OPENING = {"lower-bound": 99, "construction": 2020}
+OPENING = {"lower-bound": 99, "construction": 756}
 
 
 def standings(entries):

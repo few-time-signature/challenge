@@ -15,7 +15,7 @@ from judge.entry import ID, MAX_FILE, MAX_FILES, MAX_TOTAL, TRACKS, prepare, req
 
 ROOT = Path(__file__).resolve().parent
 REPO = "few-time-signature/challenge"
-EXAMPLES = {"lower-bound": "lower-99", "construction": "fors-c-2020"}
+EXAMPLES = {"lower-bound": "lower-99", "construction": "grs-cc-756-lean"}
 
 
 def run(*args, cwd=None, data=None, env=None):

@@ -9,7 +9,7 @@ How short can a few-time signature be in the authenticated-disclosure hash-DAG m
 | Track | Opening bound | Proof |
 | --- | ---: | --- |
 | Universal lower bound | 99 bytes | [Organizer theorem](formal/PoissonDAG/V2/Lower99.lean) |
-| Construction | 2,020 bytes | [FORS+C entry](examples/entries/construction/fors-c-2020/) |
+| Construction | 756 bytes | [GRS-CC certificate](examples/entries/construction/grs-cc-756-lean/proof/Main.lean) |
 
 Signing uses at most 2²⁴ expected hashes, verification at most 512 expected hashes, and honest signing failure is at most 2⁻¹²⁸. Draw one shared Poisson(1) number of independent successful signing histories. The probability that a fresh raw target is accepted and all its required labels can be derived from the public root and pooled disclosures must be at most 2⁻¹²⁸. Every disclosed 16-byte label contributes to the recomputed root. [Formal cost and covering experiment](formal/PoissonDAG/Model.lean)
 
