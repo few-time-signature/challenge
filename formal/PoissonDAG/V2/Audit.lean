@@ -1,4 +1,4 @@
-import PoissonDAG.V2.Lower99
+import PoissonDAG.V2.OpeningLowerBound
 import Mathlib.Tactic.FinCases
 
 namespace PoissonDAG.V2
@@ -62,11 +62,11 @@ example : ¬ Authenticated tree [true, true, false, false] [false, false, false,
   intro h
   exact Bool.noConfusion h.2.1
 
-example : PoissonDAG.V2.UniversalLowerBound 99 := PoissonDAG.V2.lower99
+example : PoissonDAG.V2.UniversalLowerBound 99 := PoissonDAG.V2.openingLowerBound
 #check PoissonDAG.V2.ConstructionCertificate
-/-- info: 'PoissonDAG.V2.lower99' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+/-- info: 'PoissonDAG.V2.openingLowerBound' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
-#print axioms PoissonDAG.V2.lower99
+#print axioms PoissonDAG.V2.openingLowerBound
 #print axioms PoissonDAG.V2.ofBaseConstruction
 #print axioms onlyInputOfUnaryRoot
 #print axioms twoLeaves

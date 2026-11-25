@@ -4,7 +4,7 @@
 
 | Track | What Lean must prove | Better score | Opening bound |
 | --- | --- | --- | --- |
-| Lower bound | Every eligible scheme uses at least the claimed bytes | Larger | [99 B](formal/PoissonDAG/V2/Lower99.lean) |
+| Lower bound | Every eligible scheme uses at least the claimed bytes | Larger | [99 B](formal/PoissonDAG/V2/OpeningLowerBound.lean) |
 | Construction | The explicit submitted scheme is eligible and uses at most the claimed bytes | Smaller | [756 B GRS-CC](examples/entries/construction/grs-cc-756-lean/proof/Main.lean) |
 
 Both tracks use the **authenticated-disclosure model**. Every disclosed label must contribute to the root recomputed during verification. The model measures maximum serialized signature bytes, expected signing and verification hashes, honest failure, and the chance that disclosures from one shared Poisson(1) history cover a fresh independent raw target. The covering target is a symbolic probability of at most 2⁻¹²⁸. Full adaptive ROM unforgeability would require another theorem. The independent input bits feed an explicit acyclic Boolean circuit. The Lean examples use the namespace `PoissonDAG.V2` for this model. [Formal contract](formal/PoissonDAG/V2/Model.lean) · [Base definitions](formal/PoissonDAG/Model.lean)
@@ -69,17 +69,17 @@ After a successful Lean replay, the organization website displays the title and 
 
 ## Submit a lower bound
 
-For example, the following two files reproduce the organizer's known theorem. Say so in the provenance.
+Choose any valid entry ID. Put the byte bound in the claim and in the type of `Submission.certificate`. The example below reproduces the organizer's opening theorem. Say so in the provenance.
 
 ```json
-{"contract":"poisson-dag-v2-challenge-1","track":"lower-bound","id":"replay-99","team":"example-team","bound_bytes":99}
+{"contract":"poisson-dag-v2-challenge-1","track":"lower-bound","id":"opening-replay","team":"example-team","bound_bytes":99}
 ```
 
 ```lean
-import PoissonDAG.V2.Lower99
+import PoissonDAG.V2.OpeningLowerBound
 
 theorem Submission.certificate : PoissonDAG.V2.UniversalLowerBound 99 :=
-  PoissonDAG.V2.lower99
+  PoissonDAG.V2.openingLowerBound
 ```
 
 ## Submit a construction

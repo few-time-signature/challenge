@@ -10,7 +10,8 @@ tar --zstd -xf "$tool/release.tar.zst" -C "$tool"
 rm "$tool/release.tar.zst"
 export PATH="$tool/$release/bin:$PATH" MATHLIB_NO_CACHE_ON_UPDATE=1
 echo "$tool/$release/bin" >> "$GITHUB_PATH"
-targets=(PoissonDAG.V2.Lower99)
+# Include the legacy import for previously submitted certificates.
+targets=(PoissonDAG.V2.OpeningLowerBound PoissonDAG.V2.Lower99)
 roots=(formal/starter-cache-roots.txt)
 if [[ ${FTS_BUILD_GRSCC:-false} == true ]]; then
   targets+=(PoissonDAG.Constructions.GRSCC.{Reference,Certification,TwoSame})

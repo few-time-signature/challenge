@@ -83,4 +83,4 @@ class GitIntakeTests(unittest.TestCase):
         self.assert_bundle_rejected("construction/fors-c-2132")
 
     def test_two_tracks_in_one_commit(self):
-        self.assert_bundle_rejected("lower-bound/lower-99")
+        self.assert_bundle_rejected("lower-bound/opening-lower-bound")

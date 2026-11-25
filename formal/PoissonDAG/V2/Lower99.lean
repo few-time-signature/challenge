@@ -1,8 +1,9 @@
-import PoissonDAG.V2.Model
+import PoissonDAG.V2.OpeningLowerBound
 import PoissonDAG.Bounds.Lower99
 
 namespace PoissonDAG.V2
 
-theorem lower99 : UniversalLowerBound 99 := ofBaseLowerBound PoissonDAG.lower99
+/-- Compatibility name for previously submitted proofs. -/
+theorem lower99 : UniversalLowerBound 99 := openingLowerBound
 
 end PoissonDAG.V2

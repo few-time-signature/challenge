@@ -1,6 +1,6 @@
 {
   "track": "lower-bound",
-  "id": "lower-99",
+  "id": "opening-lower-bound",
   "bound_bytes": 99,
   "team": "organizer",
   "contract": "poisson-dag-v2-challenge-1"
